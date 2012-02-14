@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Demo news aggregator with backbone.js</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="stylesheet" href="stylesheets/screen.css" media="screen" />
+
+    <script src="javascripts/vendor/jquery.js"></script>
+    <script src="javascripts/vendor/underscore.js"></script>
+    <script src="javascripts/vendor/backbone.js"></script>
+
+    <script src="javascripts/news.js"></script>
+
+    <script id='news-item-template' type='text/template'>
+      <div class='topic'>
+        <%= topic.displayName %>
+      </div>
+      <div class='title'>
+        <%= title %>
+      </div>
+      <div class='source'>
+        <%= source %>
+      </div>
+    </script>
+    
+    <script id='news-detail-template' type='text/template'>
+      <img height='250' />
+      <div class='title'>
+        <%= title %>
+      </div>
+      <div class='subtitle'>
+        <%= subTitle %>
+      </div>
+      <div class='embedded'/>
+    </script>
+    
+    <script id='youtube-template' type='text/template'>
+       <iframe class="youtube-player" type="text/html" width="550" height="320" 
+               src="http://www.youtube.com/embed/<%= youtube_videoid %>?autohide=1&showinfo=0" frameborder="0">
+       </iframe>
+    </script>
+    
+    <script type='text/javascript'>
+      //<![CDATA[
+        jQuery(function() {
+          new App();
+        });
+      //]]>
+    </script>
+    
+  </head>
+
+  <body>
+    <div id='container'>
+      <div id='list'>
+        <h1>News</h1>
+        <ul id='news-items'></ul>
+      </div>
+      <div id='detail'>
+        <div id='detail-content'></div>
+      </div>
+    </div>
+  </body>
+</html>
